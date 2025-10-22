@@ -1,0 +1,11 @@
+services:
+  web:
+    image: happy-frontend:latest
+    environment:
+      POSTHOG_API_KEY: ""
+      REVENUE_CAT_STRIPE: ""
+    ports:
+      - "80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
